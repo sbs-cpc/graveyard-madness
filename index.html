@@ -389,6 +389,10 @@
     // container and boot the Godot engine (only once).
     setTimeout(function () {
       gameContainer.classList.add('active');
+
+      // Show the Godot loading screen immediately.
+      blackout.classList.remove('active');
+
       if (!gameStarted) {
         gameStarted = true;
         startGodotGame();
@@ -494,7 +498,6 @@ function startGodotGame() {
         }
       },
     }).then(() => {
-      blackout.classList.remove('active');
       setStatusMode('hidden');
     }, displayFailureNotice);
   }
