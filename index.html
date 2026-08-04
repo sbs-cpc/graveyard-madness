@@ -494,6 +494,7 @@ function startGodotGame() {
         }
       },
     }).then(() => {
+      blackout.classList.remove('active');
       setStatusMode('hidden');
     }, displayFailureNotice);
   }
